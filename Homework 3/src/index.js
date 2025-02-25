@@ -47,5 +47,9 @@ const rl = readline.createInterface({
       .join("\n")
   );
 
+  const exportPath = await rl.question("Enter file path to export results: ");
+  await AirBnBDataHandler.exportResults(exportPath);
+  console.log(`Results exported to ${exportPath}`);
+
   rl.close();
 })();
