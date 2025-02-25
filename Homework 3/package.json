@@ -1,0 +1,25 @@
+{
+  "name": "homework-3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsinyuko1111/NEU_CS5010_Programming-Design-Paradigm.git"
+  },
+  "author": "Hsinyu Ko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hsinyuko1111/NEU_CS5010_Programming-Design-Paradigm/issues"
+  },
+  "homepage": "https://github.com/hsinyuko1111/NEU_CS5010_Programming-Design-Paradigm#readme",
+  "description": "",
+  "devDependencies": {
+    "@stylistic/eslint-plugin-js": "^4.0.1",
+    "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.0.1",
+    "jsdoc": "^4.0.4"
+  }
+}
