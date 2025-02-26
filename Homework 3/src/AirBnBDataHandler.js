@@ -80,7 +80,7 @@ export const AirBnBDataHandler = {
     if (this.listings.length === 0)
       return { median: 0, mean: 0, mode: 0, min: 0, max: 0, stdDev: 0 };
 
-    const prices = this.listings
+    const prices = this.listings //Array.isArray(prices) = true
       .map((listing) => listing.price)
       .sort((a, b) => a - b);
     const count = prices.length;

@@ -100,6 +100,46 @@ export const AirBnBDataHandler = {
   },
 
   /**
+   * Computes key price statistics: median, mean, mode, min, max, and standard deviation.
+   * @returns {Object} An object containing various price statistics.
+   */
+  // MY CREATIVE ADDITION !!!
+  computePriceStatistics() {
+    if (this.listings.length === 0)
+      return { median: 0, mean: 0, mode: 0, min: 0, max: 0, stdDev: 0 };
+
+    const prices = this.listings //Array.isArray(prices) = true
+      .map((listing) => listing.price)
+      .sort((a, b) => a - b);
+    const count = prices.length;
+
+    const mid = Math.floor(count / 2);
+    const median =
+      count % 2 !== 0 ? prices[mid] : (prices[mid - 1] + prices[mid]) / 2;
+
+    const sum = prices.reduce((acc, price) => acc + price, 0);
+    const mean = sum / count;
+
+    const frequency = prices.reduce((acc, price) => {
+      acc[price] = (acc[price] || 0) + 1;
+      return acc;
+    }, {});
+    const mode = Object.keys(frequency).reduce((a, b) =>
+      frequency[a] > frequency[b] ? a : b
+    );
+
+    const min = prices[0];
+    const max = prices[count - 1];
+
+    // calculate standard deviation
+    const variance =
+      prices.reduce((acc, price) => acc + Math.pow(price - mean, 2), 0) / count;
+    const stdDev = Math.sqrt(variance);
+
+    return { median, mean, mode: Number(mode), min, max, stdDev };
+  },
+
+  /**
    * Export results to a file
    * @param {string} filePath - Output file path
    * @returns {Promise&lt;void>}
@@ -110,6 +150,7 @@ export const AirBnBDataHandler = {
         filteredListings: this.listings,
         stats: this.computeStats(),
         hostRankings: this.computeHostRankings(),
+        priceStatistics: this.computePriceStatistics(), // MY CREATIVE ADDITION !!!
       },
       null, //include all fields
       2 //indent with 2
