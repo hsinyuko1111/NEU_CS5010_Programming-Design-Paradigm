@@ -38,11 +38,20 @@ const rl = readline.createInterface({
   console.log(`\nFiltered Listings Count: ${stats.count}`);
   console.log(`Average Price Per Room: $${stats.avgPricePerRoom.toFixed(2)}`);
 
+  const priceStats = AirBnBDataHandler.computePriceStatistics();
+  console.log("\nPrice Statistics:");
+  console.log(`Median Price: $${priceStats.median.toFixed(2)}`);
+  console.log(`Mean (Average) Price: $${priceStats.mean.toFixed(2)}`);
+  console.log(`Mode Price: $${priceStats.mode.toFixed(2)}`);
+  console.log(`Minimum Price: $${priceStats.min.toFixed(2)}`);
+  console.log(`Maximum Price: $${priceStats.max.toFixed(2)}`);
+  console.log(`Price Standard Deviation: $${priceStats.stdDev.toFixed(2)}`);
+
   const rankings = AirBnBDataHandler.computeHostRankings();
   console.log("\nTop Hosts by Listings:");
   console.log(
     rankings
-      //   .slice(0, 10)
+      .slice(0, 10) //show ten for now
       .map(([host, count]) => `Host ID: ${host}, Listings: ${count}`)
       .join("\n")
   );

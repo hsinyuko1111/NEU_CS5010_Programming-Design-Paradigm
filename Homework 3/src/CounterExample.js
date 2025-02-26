@@ -1,17 +1,17 @@
-// ❌ Bad Example: Using a Class That Introduces Impurity
+//  Bad Example: Using a Class That Introduces Impurity
 class CounterExample {
   constructor(listings) {
     this.listings = listings; // Stores mutable state
   }
 
-  // ❌ Impure: Modifies internal state instead of returning a new value
+  //  Impure: Modifies internal state instead of returning a new value
   filterListings(minPrice) {
     this.listings = this.listings.filter(
       (listing) => listing.price >= minPrice
     ); // Changes internal data
   }
 
-  // ❌ Impure: Mutates original listings array
+  // Impure: Mutates original listings array
   removeLowRated(minRating) {
     for (let i = this.listings.length - 1; i >= 0; i--) {
       if (this.listings[i].review_score < minRating) {
