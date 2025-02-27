@@ -4,6 +4,10 @@
 
 This project was designed to process and analyze Airbnb listing data using a functional programming approach in JavaScript. The goal was to implement filtering, statistical calculations, and host ranking without modifying the original dataset, ensuring pure functions and method chaining.
 
+## Vedio Link
+
+- [📄 click here] (https://youtu.be/QXblsfuFptY)
+
 ## Tools and Technologies Used
 
 - **JavaScript (ES Modules)**: The main programming language used.
