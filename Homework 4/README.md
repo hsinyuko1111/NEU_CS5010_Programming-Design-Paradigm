@@ -10,7 +10,8 @@ A real-time chat application built with Socket.IO, Express, and Node.js that all
 - Connection status logging
 - Special `/celebrate` command that triggers a colorful confetti animation
 
-
+## Youtube Link 
+- [Click here!] ("https://youtu.be/0CXmbpZnShQ")
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) (v14 or higher recommended)
