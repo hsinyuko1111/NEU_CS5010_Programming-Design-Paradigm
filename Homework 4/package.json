@@ -4,18 +4,29 @@
   "description": "chat server",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "dev:server": "node src/index.js",
+    "dev:client": "vite client",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build": "vite build client",
+    "preview": "vite preview client"
   },
   "author": "HsinYu Ko",
   "license": "MIT",
   "devDependencies": {
     "@stylistic/eslint-plugin-js": "^4.2.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
     "eslint": "^9.23.0",
     "eslint-config-prettier": "^10.1.1",
-    "jsdoc": "^4.0.4"
+    "jsdoc": "^4.0.4",
+    "vite": "^6.2.5"
   },
   "dependencies": {
     "express": "^5.1.0",
-    "socket.io": "^4.8.1"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1"
   }
 }
